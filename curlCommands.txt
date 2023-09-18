@@ -1,0 +1,1 @@
+curl --header "Content-Type: application/json" --request POST --data '{"email": "jose@gmail.com", "firstName": "Jose", "lastName": "Hurtado"}' https://8t8mboc8o9.execute-api.eu-west-3.amazonaws.com/staging
