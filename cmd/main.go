@@ -3,6 +3,7 @@ package main
 import (
 	"os"
 
+	"github.com/JoseHurtadoBaeza/Golang-AWS-ServerlessAPI-freeCodeCamp/pkg/handlers"
 	"github.com/aws/aws-lambda-go/events"
 	"github.com/aws/aws-lambda-go/lambda"
 	"github.com/aws/aws-sdk-go/aws"
@@ -32,7 +33,7 @@ func main() {
 
 }
 
-const tableName = "LambdaInGoUser"
+const tableName = "go-serverless-api"
 
 func handler(req events.APIGatewayProxyRequest) (*events.APIGatewayProxyResponse, error) {
 
