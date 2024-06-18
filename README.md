@@ -1,4 +1,4 @@
-# Project: Go and AWS - Code and Deploy a Serverless API
+Go and AWS - Code and Deploy a Serverless API
 
 This repository contains the code for a serverless API built with Go and deployed on AWS using services like Lambda, API Gateway, and DynamoDB.
 
@@ -10,8 +10,6 @@ This repository contains the code for a serverless API built with Go and deploye
 - [Usage](#usage)
 - [Architecture](#architecture)
 - [Deployment](#deployment)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Introduction
 
@@ -104,15 +102,3 @@ To deploy the application to AWS:
 5. **Create DynamoDB Table**:
    - Go to the DynamoDB console.
    - Create a table with the required schema (e.g., a table named `users` with `email` as the primary key).
-
-## Contributing
-
-Contributions are welcome! Please open an issue or submit a pull request with your changes.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-Feel free to adjust the file paths, URLs, and specific content to fit your project. The image from your PDF should be uploaded to your repository and linked appropriately.
