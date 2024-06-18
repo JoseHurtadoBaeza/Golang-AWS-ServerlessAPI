@@ -52,10 +52,11 @@ The project is structured as follows:
 3. Create a DynamoDB table named `go-serverless-api`.
 4. Update the DynamoDB client in `main.go` to match your DynamoDB configuration.
 5. Run the application:
-   ```
-   go run main.go
-   ```
-6. The application will start running on `http://localhost:8000`.
+   To deploy the API in AWS and everything works fine you need to build the executable using this command: 
+   
+   GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -o main main.go
+   
+   And later compress in a zip file for the AWS upload option in the Lambda function.
 
 ### API Endpoints
 
@@ -63,9 +64,3 @@ The project is structured as follows:
 - `POST /api/login`: Log in a user and receive a JWT cookie.
 - `GET /api/user`: Retrieve the authenticated user's information.
 - `POST /api/logout`: Log out the user by removing the JWT cookie.
-
-To deploy the API in AWS and everything works fine you need to build the executable using this command: 
-
-GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -o main main.go
-
-And later compress in a zip file for the AWS upload option in the Lambda function.
