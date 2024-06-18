@@ -6,7 +6,7 @@ This project demonstrates how to create a serverless API using Go and AWS. It in
 
 ### Architecture
 
-[Architecture Diagram
+![System Architecture](images/architecture.png)
 
 ### Technologies Used
 
