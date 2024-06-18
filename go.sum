@@ -1,3 +1,5 @@
+github.com/JoseHurtadoBaeza/Golang-AWS-ServerlessAPI-freeCodeCamp v0.0.0-20240618155632-819bf36b2f92 h1:xJNiLacjIQZgJBXPIxOwpweDgHke5o/2FqYvFVaEN2M=
+github.com/JoseHurtadoBaeza/Golang-AWS-ServerlessAPI-freeCodeCamp v0.0.0-20240618155632-819bf36b2f92/go.mod h1:clRf1KkCMixWH/CF25WJeQ00S6azm9HQxhscxQRuQM8=
 github.com/aws/aws-lambda-go v1.41.0 h1:l/5fyVb6Ud9uYd411xdHZzSf2n86TakxzpvIoz7l+3Y=
 github.com/aws/aws-lambda-go v1.41.0/go.mod h1:jwFe2KmMsHmffA1X2R09hH6lFzJQxzI8qK17ewzbQMM=
 github.com/aws/aws-sdk-go v1.45.11 h1:8qiSrA12+NRr+2MVpMApi3JxtiFFjDVU1NeWe+80bYg=
