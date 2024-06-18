@@ -66,12 +66,7 @@ curl --header "Content-Type: application/json" --request GET https://your-api-en
 
 The architecture of this serverless API involves several AWS services and follows a modular design. Below is a diagram illustrating the high-level architecture of the system:
 
-![Architecture Diagram](images/Architecture.png)
-
-<details>
-<summary>Click to view diagram</summary>
-![Architecture Image from PDF](file-37mM7kxTQkPjeQ4jtwpSU6TV#page=24)
-</details>
+![Architecture Diagram](images/architecture.png)
 
 ### Components
 
