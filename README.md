@@ -1,66 +1,123 @@
-## Go and AWS - Code and Deploy a Serverless API
+# Project: Go and AWS - Code and Deploy a Serverless API
 
-### Introduction
+This repository contains the code for a serverless API built with Go and deployed on AWS using services like Lambda, API Gateway, and DynamoDB.
 
-This project demonstrates how to create a serverless API using Go and AWS. It includes a comprehensive guide on setting up the environment, deploying the application, and testing the API.
+## Table of Contents
 
-### Architecture
+- [Introduction](#introduction)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Architecture](#architecture)
+- [Deployment](#deployment)
+- [Contributing](#contributing)
+- [License](#license)
 
-![System Architecture](images/architecture.png)
+## Introduction
 
-### Technologies Used
+This project demonstrates how to create and deploy a serverless API using Go and AWS. The API leverages AWS Lambda for serverless computing, API Gateway for request routing, and DynamoDB for data storage.
 
-- Go
-- AWS
-- AWS Lambda
-- API Gateway
-- DynamoDB
-- GORM
-- JWT
+## Prerequisites
 
-### Project Structure
+Before you begin, ensure you have met the following requirements:
+- Go installed on your local machine.
+- An AWS account.
+- AWS CLI configured on your local machine.
+- Basic knowledge of Go and AWS services.
 
-The project is structured as follows:
+## Installation
 
-```
-.
-├── handlers
-│   ├── api_response.go
-│   ├── create_user.go
-│   ├── delete_user.go
-│   ├── get_user.go
-│   ├── put_user.go
-│   └── unhandled_method.go
-├── main.go
-├── models
-│   └── user.go
-├── user.go
-├── validators
-│   └── is_email_valid.go
-└── go.mod
+Clone the repository:
+
+```bash
+git clone https://github.com/your-username/your-repo-name.git
+cd your-repo-name
 ```
 
-### Getting Started
+Install the required Go packages:
 
-1. Install Go and set up your development environment.
-2. Install the required dependencies:
-   - AWS SDK for Go: `go get github.com/aws/aws-sdk-go/aws`
-   - AWS Lambda Go SDK: `go get github.com/aws/aws-lambda-go/lambda`
-   - GORM: `go get gorm.io/gorm` and `go get gorm.io/driver/mysql`
-   - JWT: `go get github.com/golang-jwt/jwt/v5`
-   - Bcrypt: `go get golang.org/x/crypto/bcrypt`
-3. Create a DynamoDB table named `go-serverless-api`.
-4. Update the DynamoDB client in `main.go` to match your DynamoDB configuration.
-5. Run the application:
-   To deploy the API in AWS and everything works fine you need to build the executable using this command: 
-   
+```bash
+go get github.com/aws/aws-sdk-go/aws
+go get github.com/aws/aws-sdk-go/service/lambda
+go get github.com/aws/aws-lambda-go/lambda
+```
+
+## Usage
+
+### Running Locally
+
+To run the application locally, use the following command:
+
+```bash
+GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -o main main.go
+./main
+```
+
+### Testing the API
+
+You can test the API endpoints using `curl` or any API testing tool like Postman. Here are some example `curl` commands:
+
+```bash
+curl --header "Content-Type: application/json" --request POST --data '{"email": "jose@gmail.com", "firstName": "Jose", "lastName": "Hurtado"}' https://your-api-endpoint
+curl --header "Content-Type: application/json" --request GET https://your-api-endpoint?email=jose@gmail.com
+```
+
+## Architecture
+
+The architecture of this serverless API involves several AWS services and follows a modular design. Below is a diagram illustrating the high-level architecture of the system:
+
+![Architecture Diagram](images/Architecture.png)
+
+<details>
+<summary>Click to view diagram</summary>
+![Architecture Image from PDF](file-37mM7kxTQkPjeQ4jtwpSU6TV#page=24)
+</details>
+
+### Components
+
+- **API Gateway**: Acts as the entry point for API requests and routes them to the appropriate Lambda function.
+- **AWS Lambda**: Executes the application logic without provisioning or managing servers.
+- **DynamoDB**: Provides a NoSQL database for storing user data.
+
+## Deployment
+
+To deploy the application to AWS:
+
+1. **Build the Go executable**:
+
+   ```bash
    GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -o main main.go
-   
-   And later compress in a zip file for the AWS upload option in the Lambda function.
+   ```
 
-### API Endpoints
+2. **Package the code**:
 
-- `POST /api/register`: Register a new user.
-- `POST /api/login`: Log in a user and receive a JWT cookie.
-- `GET /api/user`: Retrieve the authenticated user's information.
-- `POST /api/logout`: Log out the user by removing the JWT cookie.
+   ```bash
+   zip main.zip main
+   ```
+
+3. **Upload to AWS Lambda**:
+   - Go to the AWS Lambda console.
+   - Create a new function or update an existing one.
+   - Upload the `main.zip` file.
+   - Set the handler to `main`.
+
+4. **Configure API Gateway**:
+   - Go to the API Gateway console.
+   - Create a new API or update an existing one.
+   - Configure the methods and integrate with the Lambda function.
+
+5. **Create DynamoDB Table**:
+   - Go to the DynamoDB console.
+   - Create a table with the required schema (e.g., a table named `users` with `email` as the primary key).
+
+## Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request with your changes.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+Feel free to adjust the file paths, URLs, and specific content to fit your project. The image from your PDF should be uploaded to your repository and linked appropriately.
