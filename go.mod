@@ -1,4 +1,4 @@
-module github.com/JoseHurtadoBaeza/Golang-AWS-ServerlessAPI-freeCodeCamp
+module github.com/josehb96/Go-AWS-ServerlessAPI
 
 go 1.21.1
 
