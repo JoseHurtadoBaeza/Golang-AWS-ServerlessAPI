@@ -10,6 +10,7 @@ This repository contains the code for a serverless API built with Go and deploye
 - [Usage](#usage)
 - [Architecture](#architecture)
 - [Deployment](#deployment)
+- [Documentation](#documentation)
 
 ## Introduction
 
